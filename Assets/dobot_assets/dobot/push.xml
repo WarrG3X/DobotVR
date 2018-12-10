@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mujoco>
+	<compiler angle="radian" coordinate="local" meshdir="../stls/dobot" texturedir="../textures"></compiler>
+	<option timestep="0.002">
+		<flag warmstart="enable"></flag>
+	</option>
+	<visual>
+		<quality shadowsize="4096"></quality>
+	</visual>
+
+	<include file="shared_push.xml"></include>
+	
+	<worldbody>
+
+		<include file="base.xml"></include>
+
+		<include file="robot_push.xml"></include>
+
+
+		<body name="object0" pos="0.025 0.025 0.025">
+			<joint name="object0:joint" type="free" damping="0.01"></joint>
+			<geom size="0.0125 0.0125 0.0125" type="box" condim="3" name="object0" material="block_mat" mass="2"></geom>
+			<site name="site:object0" pos="0 0 0" size="0.0125 0.0125 0.0125" rgba="1 0 0 1" type="sphere"></site>
+		</body>
+
+	</worldbody>
+
+
+	
+
+</mujoco>

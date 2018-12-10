@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mujoco>
+	<compiler angle="radian" coordinate="local" meshdir="../stls/dobot" texturedir="../textures"></compiler>
+	<option timestep="0.002">
+		<flag warmstart="enable"></flag>
+	</option>
+	<visual>
+		<quality shadowsize="4096"></quality>
+	</visual>
+
+	<size njmax="8500" nconmax="4500"></size>
+
+	<include file="shared_pick.xml"></include>
+	
+	<worldbody>
+
+		<include file="base.xml"></include>
+
+		<include file="robot_pick.xml"></include>
+
+
+		<body name="object0" pos="0.025 0.025 0.025">
+			<joint name="object0:joint" type="free" damping="0.01"></joint>
+			<inertial diaginertia="5.2869 5.2236 5.9868" mass="0.8" pos="0 0 0"></inertial>
+			<geom size="0.0145 0.0145 0.0145" type="box" condim="4" name="object0" material="blue_block_mat" mass="0.8" ></geom>
+			<site name="site:object0" pos="0 0 0" size="0.012 0.012 0.012" rgba="1 0 0 1" type="sphere"></site>
+		</body>
+
+		
+		<include file="clutter.xml"></include>
+		
+
+	</worldbody>
+
+
+	<actuator>
+		<position ctrllimited="true" ctrlrange="0 0.025" joint="dobot:r_gripper_joint" kp="30000" name="dobot:r_gripper_joint"></position>
+		<position ctrllimited="true" ctrlrange="-0.025 0" joint="dobot:l_gripper_joint" kp="30000" name="dobot:l_gripper_joint"></position>
+	</actuator>
+</mujoco>

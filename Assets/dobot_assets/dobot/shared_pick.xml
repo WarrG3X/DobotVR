@@ -1,0 +1,73 @@
+<mujoco>
+    <asset>
+        <texture type="skybox" builtin="gradient" rgb1="0 0 0" rgb2="0.5 0.5 1" width="32" height="32"></texture>
+        <texture name="texture_block" file="block.png" gridsize="3 4" gridlayout=".U..LFRB.D.."></texture>
+        <texture name="red_block" file="block_red.png" gridsize="3 4" gridlayout=".U..LFRB.D.."></texture>
+        <texture name="yellow_block" file="block_yellow.png" gridsize="3 4" gridlayout=".U..LFRB.D.."></texture>
+        <texture name="green_block" file="block_green.png" gridsize="3 4" gridlayout=".U..LFRB.D.."></texture>
+        <texture name="blue_block" file="block_blue.png" gridsize="3 4" gridlayout=".U..LFRB.D.."></texture>
+        <texture name="pink_block" file="block_pink.png" gridsize="3 4" gridlayout=".U..LFRB.D.."></texture>
+        <texture name="magenta_block" file="block_magenta.png" gridsize="3 4" gridlayout=".U..LFRB.D.."></texture>
+        <texture name="dark_blue_block" file="block_dark_blue.png" gridsize="3 4" gridlayout=".U..LFRB.D.."></texture>
+        <texture name="dark_green_block" file="block_dark_green.png" gridsize="3 4" gridlayout=".U..LFRB.D.."></texture>
+        <texture name="arm_tex" file="arm.png" type="2d"></texture>
+        <texture name="base_tex" file="base.png" type="2d"></texture>
+        <texture name="base_blue_tex" file="base_blue.png" type="2d"></texture>
+        <texture name="base_green_tex" file="base_green.png" type="2d"></texture>
+        <texture name="gripper_tex" file="gripper.png" type="2d"></texture>
+
+        <material name="table_mat" specular="0" shininess="0.5" reflectance="0" rgba="0.6 0.6 0.6 1" texture="base_tex"></material>
+        <material name="floor_mat" specular="0" shininess="0.5" reflectance="0" rgba="1 1 1 1" texture="base_blue_tex"></material>
+        <material name="tray_mat" specular="0" shininess="0.5" reflectance="0" rgba="1 1 1 1" texture="base_green_tex"></material>
+        <material name="block_mat" specular="0" shininess="0.5" reflectance="0" rgba="1 1 1 1" texture="texture_block"></material>
+        <material name="red_block_mat" specular="0" shininess="0.5" reflectance="0" rgba="1 1 1 1" texture="red_block"></material>
+        <material name="yellow_block_mat" specular="0" shininess="0.5" reflectance="0" rgba="1 1 1 1" texture="yellow_block"></material>
+        <material name="green_block_mat" specular="0" shininess="0.5" reflectance="0" rgba="1 1 1 1" texture="green_block"></material>
+        <material name="blue_block_mat" specular="0" shininess="0.5" reflectance="0" rgba="1 1 1 1" texture="blue_block"></material>
+        <material name="dark_blue_block_mat" specular="0" shininess="0.5" reflectance="0" rgba="1 1 1 1" texture="dark_blue_block"></material>
+        <material name="dark_green_block_mat" specular="0" shininess="0.5" reflectance="0" rgba="1 1 1 1" texture="dark_green_block"></material>
+        <material name="pink_block_mat" specular="0" shininess="0.5" reflectance="0" rgba="1 1 1 1" texture="pink_block"></material>
+        <material name="magenta_block_mat" specular="0" shininess="0.5" reflectance="0" rgba="1 1 1 1" texture="magenta_block"></material>
+        <material name="puck_mat" specular="0" shininess="0.5" reflectance="0" rgba="0.2 0.2 0.2 1" texture="base_tex"></material>
+        <material name="dobot_mat" shininess="0.03" specular="0.4" rgba ="1 1 1 0"></material>
+        <material name="arm_mat" shininess="0.03" specular="0.4" texture="arm_tex"></material>
+        <material name="gripper_mat" shininess="0.03" specular="0.4" texture="gripper_tex"></material>
+
+        <mesh file="fpart1.stl" name="dobot:rear_arm_link" scale="0.002 0.002 0.002"></mesh>
+		<mesh file="fpart2.stl" name="dobot:front_arm_link" scale="0.002 0.002 0.002"></mesh>
+		<mesh file="fpart3.stl" name="dobot:lift_link" scale="0.002 0.002 0.002"></mesh>
+		<mesh file="fpart4.stl" name="dobot:base_link" scale="0.002 0.002 0.002"></mesh>
+        <mesh file="gripper_base.stl" name="dobot:gripper_link" scale="0.002 0.002 0.002"></mesh>
+		<mesh file="leftArm.stl" name="dobot:l_gripper_link" scale="0.002 0.002 0.002"></mesh>
+		<mesh file="rightArm.stl" name="dobot:r_gripper_link" scale="0.002 0.002 0.002"></mesh>
+
+
+
+        
+    </asset>
+
+    <equality>
+        <weld body1="dobot:mocap" body2="dobot:gripper_link" solimp="0.9 0.95 0.001" solref="0.02 1"></weld>
+    </equality>
+
+
+    
+    <default>
+        <default class="dobot:fetch">
+            <geom margin="0.001" material="dobot_mat" rgba="1 1 1 1" solimp="0.99 0.99 0.01" solref="0.01 1" type="mesh" user="0" group="1"></geom>
+            <joint armature="1" damping="50" frictionloss="0" stiffness="0"></joint>
+            
+            <default class="dobot:fetchGripper">
+                <geom condim="4" margin="0.001" type="box" user="0" rgba="0.356 0.361 0.376 1.0"></geom>
+                <joint armature="100" damping="1000" limited="true" solimplimit="0.99 0.999 0.01" solreflimit="0.01 1" type="slide"></joint>
+            </default>
+
+            <default class="dobot:white">
+                <geom rgba="0.9 0.9 0.9 1.0"></geom>
+            </default>
+            <default class="dobot:black">
+                <geom rgba="0.2 0.2 0.2 1.0"></geom>
+            </default>
+        </default>
+    </default>
+</mujoco>

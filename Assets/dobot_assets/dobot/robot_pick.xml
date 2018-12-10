@@ -1,0 +1,56 @@
+<mujoco>
+	<body mocap="true" name="dobot:mocap" pos="1 1 1">
+		<geom conaffinity="0" contype="0" pos="0 0 0" rgba="0 0.5 0 0.2" size="0.005 0.005 0.005" type="box"></geom>
+		<geom conaffinity="0" contype="0" pos="0 0 0" rgba="0 0.5 0 0.2" size="0.2 0.005 0.005" type="box"></geom>
+		<geom conaffinity="0" contype="0" pos="0 0 0" rgba="0 0.5 0 0.2" size="0.005 0.2 0.001" type="box"></geom>
+		<geom conaffinity="0" contype="0" pos="0 0 0" rgba="0 0.5 0 0.2" size="0.005 0.005 0.2" type="box"></geom>
+
+	</body>
+	<body childclass="dobot:fetch" name="dobot:base_link" pos="0 0 0.1" euler="0 0 0">
+		<joint armature="0.0001" axis="1 0 0" damping="1e+11" name="dobot:slide0" pos="0 0 0" type="slide"></joint>
+		<joint armature="0.0001" axis="0 1 0" damping="1e+11" name="dobot:slide1" pos="0 0 0" type="slide"></joint>
+		<joint armature="0.0001" axis="0 0 1" damping="1e+11" name="dobot:slide2" pos="0 0 0" type="slide"></joint>
+			<inertial diaginertia="1.2869 1.2236 0.9868" mass="1.5" pos="0 0 0"></inertial>
+			<geom mesh="dobot:base_link" name="dobot:base_link" material="arm_mat" class="dobot:white"></geom>
+			<body name="dobot:lift_link" pos="0 0 0.066" euler="0 0 0">
+				<inertial diaginertia="1.2869 1.2236 0.9868" mass="0.5" pos="0 0 0"></inertial>
+				<geom mesh="dobot:lift_link" name="dobot:lift_link" material="arm_mat" class="dobot:white"></geom>
+				<joint name="dobot:base_pan" type="hinge" pos="0 0 0" axis="0 0 1" range="-1.57 1.57" limited="true"/>
+				<body name="dobot:rear_arm_link" pos="0 0 0.16" euler="0 0 0">
+					<inertial diaginertia="1.2869 1.2236 0.9868" mass="0.85" pos="0 0 0" ></inertial>
+					<geom mesh="dobot:rear_arm_link" name="dobot:rear_arm_link" pos = "0 0 0" material="arm_mat" class="dobot:white"></geom>
+					<joint name="dobot:base_tilt" type="hinge" pos="0 0 0" axis="1 0 0" range="0 1.4835" limited="true"/>
+					<body name="dobot:front_arm_link" pos="0 -0.098 0.246" euler="0 0 0">
+						<inertial diaginertia="1.2869 1.2236 0.9868" mass="0.85" pos="0 0 0"></inertial>
+						<geom mesh="dobot:front_arm_link" name="dobot:front_arm_link" pos = "0 0 0" material="arm_mat" class="dobot:white"></geom>
+						<joint name="dobot:elbow_flex" type="hinge" pos="0 0 0" axis="1 0 0" range="-1.658 0.174" limited="true"/>
+						<body name="dobot:gripper_link" pos="0 -0.26 -0.136" euler="0 0 0">
+							<inertial diaginertia="1.2869 1.2236 0.9868" mass="0.3294" pos="0 0 0"></inertial>
+							<geom mesh="dobot:gripper_link" name="dobot:gripper_link" pos = "0 0 0" material="gripper_mat" class="dobot:white"></geom>
+							<joint name="dobot:wrist_flex" type="hinge" pos="0 0 0" axis="1 0 0"/>
+							<body name="dobot:gripper">
+								<inertial diaginertia="1.2869 1.2236 0.9868" mass="0.1" pos="0 0 0"></inertial>
+								<joint name="dobot:gripper_rot" type="hinge" pos="0 -0.123 -0.12" axis="0 0 1"/>
+								<site name="dobot:grip" pos="0 -0.123 -0.153" rgba="0 0 0 0" size="0.02 0.02 0.02"></site>								
+								<body childclass="dobot:fetchGripper" name="dobot:l_gripper_link" pos="0 -0.1425 -0.09" euler="0 0 0">
+									<inertial diaginertia="1.2869 1.2236 0.9868" mass="0.3294" pos="0 0 0"></inertial>
+									<geom mesh="dobot:l_gripper_link" name="dobot:l_gripper_link" pos = "0 0 0" material="gripper_mat" class="dobot:white"></geom>
+									<joint name="dobot:l_gripper_joint" type="slide" axis="0 1 0" limited="true" range="-0.025 0"/>
+								</body>
+								<body childclass="dobot:fetchGripper" name="dobot:r_gripper_link" pos="0 -0.1025 -0.09" euler="0 0 0">
+									<inertial diaginertia="1.2869 1.2236 0.9868" mass="0.3294" pos="0 0 0"></inertial>
+									<geom mesh="dobot:r_gripper_link" name="dobot:r_gripper_link" pos = "0 0 0" material="gripper_mat" class="dobot:white"></geom>
+									<joint name="dobot:r_gripper_joint" type="slide" axis="0 1 0" limited="true" range = "0 0.025"/>
+								</body>
+							</body>
+						</body>
+					</body>
+				</body>
+			</body>
+		</body>
+
+
+
+
+
+</mujoco>

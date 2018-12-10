@@ -1,0 +1,493 @@
+<mujoco>
+		<body pos = "-1.0625 0.9 2">
+			<geom size="0.16 0.70 0.001" type="box" mass="300" rgba="0 0 0 1"></geom>
+		</body>
+		        
+        <body name="object1" pos="-1.025 0.250 2.025">
+			<joint name="object1:joint" type="free" damping="0.01"></joint>
+			<geom size="0.0145 0.0145 0.0145" type="box" condim="3" name="object1" material="yellow_block_mat" mass="0.8" ></geom>
+            <inertial diaginertia="5.2869 5.2236 5.9868" mass="0.8" pos="0 0 0"></inertial>
+			<site name="site:object1" pos="0 0 0" size="0.0125 0.0125 0.0125" rgba="1 0 0 1" type="sphere"></site>
+		</body>
+		<body name="object2" pos="-1.025 0.300 2.025">
+			<joint name="object2:joint" type="free" damping="0.01"></joint>
+			<geom size="0.0145 0.0145 0.0145" type="box" condim="3" name="object2" material="yellow_block_mat" mass="0.8" ></geom>
+            <inertial diaginertia="5.2869 5.2236 5.9868" mass="0.8" pos="0 0 0"></inertial>
+			<site name="site:object2" pos="0 0 0" size="0.0125 0.0125 0.0125" rgba="1 0 0 1" type="sphere"></site>
+		</body>
+		<body name="object3" pos="-1.025 0.350 2.025">
+			<joint name="object3:joint" type="free" damping="0.01"></joint>
+			<geom size="0.0145 0.0145 0.0145" type="box" condim="3" name="object3" material="yellow_block_mat" mass="0.8" ></geom>
+            <inertial diaginertia="5.2869 5.2236 5.9868" mass="0.8" pos="0 0 0"></inertial>
+			<site name="site:object3" pos="0 0 0" size="0.0125 0.0125 0.0125" rgba="1 0 0 1" type="sphere"></site>
+		</body>
+		<body name="object4" pos="-1.025 0.400 2.025">
+			<joint name="object4:joint" type="free" damping="0.01"></joint>
+			<geom size="0.0145 0.0145 0.0145" type="box" condim="3" name="object4" material="yellow_block_mat" mass="0.8" ></geom>
+            <inertial diaginertia="5.2869 5.2236 5.9868" mass="0.8" pos="0 0 0"></inertial>
+			<site name="site:object4" pos="0 0 0" size="0.0125 0.0125 0.0125" rgba="1 0 0 1" type="sphere"></site>
+		</body>
+		<body name="object5" pos="-1.025 0.450 2.025">
+			<joint name="object5:joint" type="free" damping="0.01"></joint>
+			<geom size="0.0145 0.0145 0.0145" type="box" condim="3" name="object5" material="yellow_block_mat" mass="0.8" ></geom>
+            <inertial diaginertia="5.2869 5.2236 5.9868" mass="0.8" pos="0 0 0"></inertial>
+			<site name="site:object5" pos="0 0 0" size="0.0125 0.0125 0.0125" rgba="1 0 0 1" type="sphere"></site>
+		</body>
+		<body name="object6" pos="-1.025 0.500 2.025">
+			<joint name="object6:joint" type="free" damping="0.01"></joint>
+			<geom size="0.0145 0.0145 0.0145" type="box" condim="3" name="object6" material="yellow_block_mat" mass="0.8" ></geom>
+            <inertial diaginertia="5.2869 5.2236 5.9868" mass="0.8" pos="0 0 0"></inertial>
+			<site name="site:object6" pos="0 0 0" size="0.0125 0.0125 0.0125" rgba="1 0 0 1" type="sphere"></site>
+		</body>
+		<body name="object7" pos="-1.025 0.550 2.025">
+			<joint name="object7:joint" type="free" damping="0.01"></joint>
+			<geom size="0.0145 0.0145 0.0145" type="box" condim="3" name="object7" material="yellow_block_mat" mass="0.8" ></geom>
+            <inertial diaginertia="5.2869 5.2236 5.9868" mass="0.8" pos="0 0 0"></inertial>
+			<site name="site:object7" pos="0 0 0" size="0.0125 0.0125 0.0125" rgba="1 0 0 1" type="sphere"></site>
+		</body>
+		<body name="object8" pos="-1.025 0.600 2.025">
+			<joint name="object8:joint" type="free" damping="0.01"></joint>
+			<geom size="0.0145 0.0145 0.0145" type="box" condim="3" name="object8" material="yellow_block_mat" mass="0.8" ></geom>
+            <inertial diaginertia="5.2869 5.2236 5.9868" mass="0.8" pos="0 0 0"></inertial>
+			<site name="site:object8" pos="0 0 0" size="0.0125 0.0125 0.0125" rgba="1 0 0 1" type="sphere"></site>
+		</body>
+		<body name="object9" pos="-1.025 0.650 2.025">
+			<joint name="object9:joint" type="free" damping="0.01"></joint>
+			<geom size="0.0145 0.0145 0.0145" type="box" condim="3" name="object9" material="yellow_block_mat" mass="0.8" ></geom>
+            <inertial diaginertia="5.2869 5.2236 5.9868" mass="0.8" pos="0 0 0"></inertial>
+			<site name="site:object9" pos="0 0 0" size="0.0125 0.0125 0.0125" rgba="1 0 0 1" type="sphere"></site>
+		</body>
+		<body name="object10" pos="-1.025 0.700 2.025">
+			<joint name="object10:joint" type="free" damping="0.01"></joint>
+			<geom size="0.0145 0.0145 0.0145" type="box" condim="3" name="object10" material="yellow_block_mat" mass="0.8" ></geom>
+            <inertial diaginertia="5.2869 5.2236 5.9868" mass="0.8" pos="0 0 0"></inertial>
+			<site name="site:object10" pos="0 0 0" size="0.0125 0.0125 0.0125" rgba="1 0 0 1" type="sphere"></site>
+		</body>
+        <body name="object11" pos="-1.15 0.250 2.025">
+			<joint name="object11:joint" type="free" damping="0.01"></joint>
+			<geom size="0.0145 0.0145 0.0145" type="box" condim="3" name="object11" material="red_block_mat" mass="0.8" ></geom>
+            <inertial diaginertia="5.2869 5.2236 5.9868" mass="0.8" pos="0 0 0"></inertial>
+			<site name="site:object11" pos="0 0 0" size="0.0125 0.0125 0.0125" rgba="1 0 0 1" type="sphere"></site>
+		</body>
+		<body name="object12" pos="-1.15 0.300 2.025">
+			<joint name="object12:joint" type="free" damping="0.01"></joint>
+			<geom size="0.0145 0.0145 0.0145" type="box" condim="3" name="object12" material="red_block_mat" mass="0.8" ></geom>
+            <inertial diaginertia="5.2869 5.2236 5.9868" mass="0.8" pos="0 0 0"></inertial>
+			<site name="site:object12" pos="0 0 0" size="0.0125 0.0125 0.0125" rgba="1 0 0 1" type="sphere"></site>
+		</body>
+		<body name="object13" pos="-1.15 0.350 2.025">
+			<joint name="object13:joint" type="free" damping="0.01"></joint>
+			<geom size="0.0145 0.0145 0.0145" type="box" condim="3" name="object13" material="red_block_mat" mass="0.8" ></geom>
+            <inertial diaginertia="5.2869 5.2236 5.9868" mass="0.8" pos="0 0 0"></inertial>
+			<site name="site:object13" pos="0 0 0" size="0.0125 0.0125 0.0125" rgba="1 0 0 1" type="sphere"></site>
+		</body>
+		<body name="object14" pos="-1.15 0.400 2.025">
+			<joint name="object14:joint" type="free" damping="0.01"></joint>
+			<geom size="0.0145 0.0145 0.0145" type="box" condim="3" name="object14" material="red_block_mat" mass="0.8" ></geom>
+            <inertial diaginertia="5.2869 5.2236 5.9868" mass="0.8" pos="0 0 0"></inertial>
+			<site name="site:object14" pos="0 0 0" size="0.0125 0.0125 0.0125" rgba="1 0 0 1" type="sphere"></site>
+		</body>
+		<body name="object15" pos="-1.15 0.450 2.025">
+			<joint name="object15:joint" type="free" damping="0.01"></joint>
+			<geom size="0.0145 0.0145 0.0145" type="box" condim="3" name="object15" material="red_block_mat" mass="0.8" ></geom>
+            <inertial diaginertia="5.2869 5.2236 5.9868" mass="0.8" pos="0 0 0"></inertial>
+			<site name="site:object15" pos="0 0 0" size="0.0125 0.0125 0.0125" rgba="1 0 0 1" type="sphere"></site>
+		</body>
+		<body name="object16" pos="-1.15 0.500 2.025">
+			<joint name="object16:joint" type="free" damping="0.01"></joint>
+			<geom size="0.0145 0.0145 0.0145" type="box" condim="3" name="object16" material="red_block_mat" mass="0.8" ></geom>
+            <inertial diaginertia="5.2869 5.2236 5.9868" mass="0.8" pos="0 0 0"></inertial>
+			<site name="site:object16" pos="0 0 0" size="0.0125 0.0125 0.0125" rgba="1 0 0 1" type="sphere"></site>
+		</body>
+		<body name="object17" pos="-1.15 0.550 2.025">
+			<joint name="object17:joint" type="free" damping="0.01"></joint>
+			<geom size="0.0145 0.0145 0.0145" type="box" condim="3" name="object17" material="red_block_mat" mass="0.8" ></geom>
+            <inertial diaginertia="5.2869 5.2236 5.9868" mass="0.8" pos="0 0 0"></inertial>
+			<site name="site:object17" pos="0 0 0" size="0.0125 0.0125 0.0125" rgba="1 0 0 1" type="sphere"></site>
+		</body>
+		<body name="object18" pos="-1.15 0.600 2.025">
+			<joint name="object18:joint" type="free" damping="0.01"></joint>
+			<geom size="0.0145 0.0145 0.0145" type="box" condim="3" name="object18" material="red_block_mat" mass="0.8" ></geom>
+            <inertial diaginertia="5.2869 5.2236 5.9868" mass="0.8" pos="0 0 0"></inertial>
+			<site name="site:object18" pos="0 0 0" size="0.0125 0.0125 0.0125" rgba="1 0 0 1" type="sphere"></site>
+		</body>
+		<body name="object19" pos="-1.15 0.650 2.025">
+			<joint name="object19:joint" type="free" damping="0.01"></joint>
+			<geom size="0.0145 0.0145 0.0145" type="box" condim="3" name="object19" material="red_block_mat" mass="0.8" ></geom>
+            <inertial diaginertia="5.2869 5.2236 5.9868" mass="0.8" pos="0 0 0"></inertial>
+			<site name="site:object19" pos="0 0 0" size="0.0125 0.0125 0.0125" rgba="1 0 0 1" type="sphere"></site>
+		</body>
+		<body name="object20" pos="-1.15 .700 2.025">
+			<joint name="object20:joint" type="free" damping="0.01"></joint>
+			<geom size="0.0145 0.0145 0.0145" type="box" condim="3" name="object20" material="red_block_mat" mass="0.8" ></geom>
+            <inertial diaginertia="5.2869 5.2236 5.9868" mass="0.8" pos="0 0 0"></inertial>
+			<site name="site:object20" pos="0 0 0" size="0.0125 0.0125 0.0125" rgba="1 0 0 1" type="sphere"></site>
+		</body>
+        <body name="object21" pos="-1.025 0.950 2.025">
+			<joint name="object21:joint" type="free" damping="0.01"></joint>
+			<geom size="0.0145 0.0145 0.0145" type="box" condim="3" name="object21" material="magenta_block_mat" mass="0.8" ></geom>
+            <inertial diaginertia="5.2869 5.2236 5.9868" mass="0.8" pos="0 0 0"></inertial>
+			<site name="site:object21" pos="0 0 0" size="0.0125 0.0125 0.0125" rgba="1 0 0 1" type="sphere"></site>
+		</body>
+		<body name="object22" pos="-1.025 1.000 2.025">
+			<joint name="object22:joint" type="free" damping="0.01"></joint>
+			<geom size="0.0145 0.0145 0.0145" type="box" condim="3" name="object22" material="magenta_block_mat" mass="0.8" ></geom>
+            <inertial diaginertia="5.2869 5.2236 5.9868" mass="0.8" pos="0 0 0"></inertial>
+			<site name="site:object22" pos="0 0 0" size="0.0125 0.0125 0.0125" rgba="1 0 0 1" type="sphere"></site>
+		</body>
+		<body name="object23" pos="-1.025 1.050 2.025">
+			<joint name="object23:joint" type="free" damping="0.01"></joint>
+			<geom size="0.0145 0.0145 0.0145" type="box" condim="3" name="object23" material="magenta_block_mat" mass="0.8" ></geom>
+            <inertial diaginertia="5.2869 5.2236 5.9868" mass="0.8" pos="0 0 0"></inertial>
+			<site name="site:object23" pos="0 0 0" size="0.0125 0.0125 0.0125" rgba="1 0 0 1" type="sphere"></site>
+		</body>
+		<body name="object24" pos="-1.025 1.100 2.025">
+			<joint name="object24:joint" type="free" damping="0.01"></joint>
+			<geom size="0.0145 0.0145 0.0145" type="box" condim="3" name="object24" material="magenta_block_mat" mass="0.8" ></geom>
+            <inertial diaginertia="5.2869 5.2236 5.9868" mass="0.8" pos="0 0 0"></inertial>
+			<site name="site:object24" pos="0 0 0" size="0.0125 0.0125 0.0125" rgba="1 0 0 1" type="sphere"></site>
+		</body>
+		<body name="object25" pos="-1.025 1.150 2.025">
+			<joint name="object25:joint" type="free" damping="0.01"></joint>
+			<geom size="0.0145 0.0145 0.0145" type="box" condim="3" name="object25" material="magenta_block_mat" mass="0.8" ></geom>
+            <inertial diaginertia="5.2869 5.2236 5.9868" mass="0.8" pos="0 0 0"></inertial>
+			<site name="site:object25" pos="0 0 0" size="0.0125 0.0125 0.0125" rgba="1 0 0 1" type="sphere"></site>
+		</body>
+		<body name="object26" pos="-1.025 1.200 2.025">
+			<joint name="object26:joint" type="free" damping="0.01"></joint>
+			<geom size="0.0145 0.0145 0.0145" type="box" condim="3" name="object26" material="magenta_block_mat" mass="0.8" ></geom>
+            <inertial diaginertia="5.2869 5.2236 5.9868" mass="0.8" pos="0 0 0"></inertial>
+			<site name="site:object26" pos="0 0 0" size="0.0125 0.0125 0.0125" rgba="1 0 0 1" type="sphere"></site>
+		</body>
+		<body name="object27" pos="-1.025 1.250 2.025">
+			<joint name="object27:joint" type="free" damping="0.01"></joint>
+			<geom size="0.0145 0.0145 0.0145" type="box" condim="3" name="object27" material="magenta_block_mat" mass="0.8" ></geom>
+            <inertial diaginertia="5.2869 5.2236 5.9868" mass="0.8" pos="0 0 0"></inertial>
+			<site name="site:object27" pos="0 0 0" size="0.0125 0.0125 0.0125" rgba="1 0 0 1" type="sphere"></site>
+		</body>
+		<body name="object28" pos="-1.025 1.300 2.025">
+			<joint name="object28:joint" type="free" damping="0.01"></joint>
+			<geom size="0.0145 0.0145 0.0145" type="box" condim="3" name="object28" material="magenta_block_mat" mass="0.8" ></geom>
+            <inertial diaginertia="5.2869 5.2236 5.9868" mass="0.8" pos="0 0 0"></inertial>
+			<site name="site:object28" pos="0 0 0" size="0.0125 0.0125 0.0125" rgba="1 0 0 1" type="sphere"></site>
+		</body>
+		<body name="object29" pos="-1.025 1.350 2.025">
+			<joint name="object29:joint" type="free" damping="0.01"></joint>
+			<geom size="0.0145 0.0145 0.0145" type="box" condim="3" name="object29" material="magenta_block_mat" mass="0.8" ></geom>
+            <inertial diaginertia="5.2869 5.2236 5.9868" mass="0.8" pos="0 0 0"></inertial>
+			<site name="site:object29" pos="0 0 0" size="0.0125 0.0125 0.0125" rgba="1 0 0 1" type="sphere"></site>
+		</body>
+		<body name="object30" pos="-1.025 1.400 2.025">
+			<joint name="object30:joint" type="free" damping="0.01"></joint>
+			<geom size="0.0145 0.0145 0.0145" type="box" condim="3" name="object30" material="magenta_block_mat" mass="0.8" ></geom>
+            <inertial diaginertia="5.2869 5.2236 5.9868" mass="0.8" pos="0 0 0"></inertial>
+			<site name="site:object30" pos="0 0 0" size="0.0125 0.0125 0.0125" rgba="1 0 0 1" type="sphere"></site>
+		</body>
+        <body name="object31" pos="-1.15 0.950 2.025">
+			<joint name="object31:joint" type="free" damping="0.01"></joint>
+			<geom size="0.0145 0.0145 0.0145" type="box" condim="3" name="object31" material="pink_block_mat" mass="0.8" ></geom>
+            <inertial diaginertia="5.2869 5.2236 5.9868" mass="0.8" pos="0 0 0"></inertial>
+			<site name="site:object31" pos="0 0 0" size="0.0125 0.0125 0.0125" rgba="1 0 0 1" type="sphere"></site>
+		</body>
+		<body name="object32" pos="-1.15 1.000 2.025">
+			<joint name="object32:joint" type="free" damping="0.01"></joint>
+			<geom size="0.0145 0.0145 0.0145" type="box" condim="3" name="object32" material="pink_block_mat" mass="0.8" ></geom>
+            <inertial diaginertia="5.2869 5.2236 5.9868" mass="0.8" pos="0 0 0"></inertial>
+			<site name="site:object32" pos="0 0 0" size="0.0125 0.0125 0.0125" rgba="1 0 0 1" type="sphere"></site>
+		</body>
+		<body name="object33" pos="-1.15 1.050 2.025">
+			<joint name="object33:joint" type="free" damping="0.01"></joint>
+			<geom size="0.0145 0.0145 0.0145" type="box" condim="3" name="object33" material="pink_block_mat" mass="0.8" ></geom>
+            <inertial diaginertia="5.2869 5.2236 5.9868" mass="0.8" pos="0 0 0"></inertial>
+			<site name="site:object33" pos="0 0 0" size="0.0125 0.0125 0.0125" rgba="1 0 0 1" type="sphere"></site>
+		</body>
+		<body name="object34" pos="-1.15 1.100 2.025">
+			<joint name="object34:joint" type="free" damping="0.01"></joint>
+			<geom size="0.0145 0.0145 0.0145" type="box" condim="3" name="object34" material="pink_block_mat" mass="0.8" ></geom>
+            <inertial diaginertia="5.2869 5.2236 5.9868" mass="0.8" pos="0 0 0"></inertial>
+			<site name="site:object34" pos="0 0 0" size="0.0125 0.0125 0.0125" rgba="1 0 0 1" type="sphere"></site>
+		</body>
+		<body name="object35" pos="-1.15 1.150 2.025">
+			<joint name="object35:joint" type="free" damping="0.01"></joint>
+			<geom size="0.0145 0.0145 0.0145" type="box" condim="3" name="object35" material="pink_block_mat" mass="0.8" ></geom>
+            <inertial diaginertia="5.2869 5.2236 5.9868" mass="0.8" pos="0 0 0"></inertial>
+			<site name="site:object35" pos="0 0 0" size="0.0125 0.0125 0.0125" rgba="1 0 0 1" type="sphere"></site>
+		</body>
+		<body name="object36" pos="-1.15 1.200 2.025">
+			<joint name="object36:joint" type="free" damping="0.01"></joint>
+			<geom size="0.0145 0.0145 0.0145" type="box" condim="3" name="object36" material="pink_block_mat" mass="0.8" ></geom>
+            <inertial diaginertia="5.2869 5.2236 5.9868" mass="0.8" pos="0 0 0"></inertial>
+			<site name="site:object36" pos="0 0 0" size="0.0125 0.0125 0.0125" rgba="1 0 0 1" type="sphere"></site>
+		</body>
+		<body name="object37" pos="-1.15 1.250 2.025">
+			<joint name="object37:joint" type="free" damping="0.01"></joint>
+			<geom size="0.0145 0.0145 0.0145" type="box" condim="3" name="object37" material="pink_block_mat" mass="0.8" ></geom>
+            <inertial diaginertia="5.2869 5.2236 5.9868" mass="0.8" pos="0 0 0"></inertial>
+			<site name="site:object37" pos="0 0 0" size="0.0125 0.0125 0.0125" rgba="1 0 0 1" type="sphere"></site>
+		</body>
+		<body name="object38" pos="-1.15 1.300 2.025">
+			<joint name="object38:joint" type="free" damping="0.01"></joint>
+			<geom size="0.0145 0.0145 0.0145" type="box" condim="3" name="object38" material="pink_block_mat" mass="0.8" ></geom>
+            <inertial diaginertia="5.2869 5.2236 5.9868" mass="0.8" pos="0 0 0"></inertial>
+			<site name="site:object38" pos="0 0 0" size="0.0125 0.0125 0.0125" rgba="1 0 0 1" type="sphere"></site>
+		</body>
+		<body name="object39" pos="-1.15 1.350 2.025">
+			<joint name="object39:joint" type="free" damping="0.01"></joint>
+			<geom size="0.0145 0.0145 0.0145" type="box" condim="3" name="object39" material="pink_block_mat" mass="0.8" ></geom>
+            <inertial diaginertia="5.2869 5.2236 5.9868" mass="0.8" pos="0 0 0"></inertial>
+			<site name="site:object39" pos="0 0 0" size="0.0125 0.0125 0.0125" rgba="1 0 0 1" type="sphere"></site>
+		</body>
+		<body name="object40" pos="-1.15 1.400 2.025">
+			<joint name="object40:joint" type="free" damping="0.01"></joint>
+			<geom size="0.0145 0.0145 0.0145" type="box" condim="3" name="object40" material="pink_block_mat" mass="0.8" ></geom>
+            <inertial diaginertia="5.2869 5.2236 5.9868" mass="0.8" pos="0 0 0"></inertial>
+			<site name="site:object40" pos="0 0 0" size="0.0125 0.0125 0.0125" rgba="1 0 0 1" type="sphere"></site>
+		</body>
+		<!-- More blocks -->
+
+				<body pos = "-2.0625 0.9 2">
+			<geom size="0.16 0.70 0.001" type="box" mass="300" rgba="0 0 0 1"></geom>
+		</body>        
+        <body name="object41" pos="-1.025 0.250 2.025">
+			<joint name="object41:joint" type="free" damping="0.01"></joint>
+			<geom size="0.0145 0.0145 0.0145" type="box" condim="3" name="object41" material="yellow_block_mat" mass="0.8" ></geom>
+            <inertial diaginertia="5.2869 5.2236 5.9868" mass="0.8" pos="0 0 0"></inertial>
+			<site name="site:object41" pos="0 0 0" size="0.0125 0.0125 0.0125" rgba="1 0 0 1" type="sphere"></site>
+		</body>
+		<body name="object42" pos="-1.025 0.300 2.025">
+			<joint name="object42:joint" type="free" damping="0.01"></joint>
+			<geom size="0.0145 0.0145 0.0145" type="box" condim="3" name="object42" material="yellow_block_mat" mass="0.8" ></geom>
+            <inertial diaginertia="5.2869 5.2236 5.9868" mass="0.8" pos="0 0 0"></inertial>
+			<site name="site:object42" pos="0 0 0" size="0.0125 0.0125 0.0125" rgba="1 0 0 1" type="sphere"></site>
+		</body>
+		<body name="object43" pos="-1.025 0.350 2.025">
+			<joint name="object43:joint" type="free" damping="0.01"></joint>
+			<geom size="0.0145 0.0145 0.0145" type="box" condim="3" name="object43" material="yellow_block_mat" mass="0.8" ></geom>
+            <inertial diaginertia="5.2869 5.2236 5.9868" mass="0.8" pos="0 0 0"></inertial>
+			<site name="site:object43" pos="0 0 0" size="0.0125 0.0125 0.0125" rgba="1 0 0 1" type="sphere"></site>
+		</body>
+		<body name="object44" pos="-1.025 0.400 2.025">
+			<joint name="object44:joint" type="free" damping="0.01"></joint>
+			<geom size="0.0145 0.0145 0.0145" type="box" condim="3" name="object44" material="yellow_block_mat" mass="0.8" ></geom>
+            <inertial diaginertia="5.2869 5.2236 5.9868" mass="0.8" pos="0 0 0"></inertial>
+			<site name="site:object44" pos="0 0 0" size="0.0125 0.0125 0.0125" rgba="1 0 0 1" type="sphere"></site>
+		</body>
+		<body name="object45" pos="-1.025 0.450 2.025">
+			<joint name="object45:joint" type="free" damping="0.01"></joint>
+			<geom size="0.0145 0.0145 0.0145" type="box" condim="3" name="object45" material="yellow_block_mat" mass="0.8" ></geom>
+            <inertial diaginertia="5.2869 5.2236 5.9868" mass="0.8" pos="0 0 0"></inertial>
+			<site name="site:object45" pos="0 0 0" size="0.0125 0.0125 0.0125" rgba="1 0 0 1" type="sphere"></site>
+		</body>
+		<body name="object46" pos="-1.025 0.500 2.025">
+			<joint name="object46:joint" type="free" damping="0.01"></joint>
+			<geom size="0.0145 0.0145 0.0145" type="box" condim="3" name="object46" material="yellow_block_mat" mass="0.8" ></geom>
+            <inertial diaginertia="5.2869 5.2236 5.9868" mass="0.8" pos="0 0 0"></inertial>
+			<site name="site:object46" pos="0 0 0" size="0.0125 0.0125 0.0125" rgba="1 0 0 1" type="sphere"></site>
+		</body>
+		<body name="object47" pos="-1.025 0.550 2.025">
+			<joint name="object47:joint" type="free" damping="0.01"></joint>
+			<geom size="0.0145 0.0145 0.0145" type="box" condim="3" name="object47" material="yellow_block_mat" mass="0.8" ></geom>
+            <inertial diaginertia="5.2869 5.2236 5.9868" mass="0.8" pos="0 0 0"></inertial>
+			<site name="site:object47" pos="0 0 0" size="0.0125 0.0125 0.0125" rgba="1 0 0 1" type="sphere"></site>
+		</body>
+		<body name="object48" pos="-1.025 0.600 2.025">
+			<joint name="object48:joint" type="free" damping="0.01"></joint>
+			<geom size="0.0145 0.0145 0.0145" type="box" condim="3" name="object48" material="yellow_block_mat" mass="0.8" ></geom>
+            <inertial diaginertia="5.2869 5.2236 5.9868" mass="0.8" pos="0 0 0"></inertial>
+			<site name="site:object48" pos="0 0 0" size="0.0125 0.0125 0.0125" rgba="1 0 0 1" type="sphere"></site>
+		</body>
+		<body name="object49" pos="-1.025 0.650 2.025">
+			<joint name="object49:joint" type="free" damping="0.01"></joint>
+			<geom size="0.0145 0.0145 0.0145" type="box" condim="3" name="object49" material="yellow_block_mat" mass="0.8" ></geom>
+            <inertial diaginertia="5.2869 5.2236 5.9868" mass="0.8" pos="0 0 0"></inertial>
+			<site name="site:object49" pos="0 0 0" size="0.0125 0.0125 0.0125" rgba="1 0 0 1" type="sphere"></site>
+		</body>
+		<body name="object50" pos="-1.025 0.700 2.025">
+			<joint name="object50:joint" type="free" damping="0.01"></joint>
+			<geom size="0.0145 0.0145 0.0145" type="box" condim="3" name="object50" material="yellow_block_mat" mass="0.8" ></geom>
+            <inertial diaginertia="5.2869 5.2236 5.9868" mass="0.8" pos="0 0 0"></inertial>
+			<site name="site:object50" pos="0 0 0" size="0.0125 0.0125 0.0125" rgba="1 0 0 1" type="sphere"></site>
+		</body>
+        <body name="object51" pos="-1.15 0.250 2.025">
+			<joint name="object51:joint" type="free" damping="0.01"></joint>
+			<geom size="0.0145 0.0145 0.0145" type="box" condim="3" name="object51" material="red_block_mat" mass="0.8" ></geom>
+            <inertial diaginertia="5.2869 5.2236 5.9868" mass="0.8" pos="0 0 0"></inertial>
+			<site name="site:object51" pos="0 0 0" size="0.0125 0.0125 0.0125" rgba="1 0 0 1" type="sphere"></site>
+		</body>
+		<body name="object52" pos="-1.15 0.300 2.025">
+			<joint name="object52:joint" type="free" damping="0.01"></joint>
+			<geom size="0.0145 0.0145 0.0145" type="box" condim="3" name="object52" material="red_block_mat" mass="0.8" ></geom>
+            <inertial diaginertia="5.2869 5.2236 5.9868" mass="0.8" pos="0 0 0"></inertial>
+			<site name="site:object52" pos="0 0 0" size="0.0125 0.0125 0.0125" rgba="1 0 0 1" type="sphere"></site>
+		</body>
+		<body name="object53" pos="-1.15 0.350 2.025">
+			<joint name="object53:joint" type="free" damping="0.01"></joint>
+			<geom size="0.0145 0.0145 0.0145" type="box" condim="3" name="object53" material="red_block_mat" mass="0.8" ></geom>
+            <inertial diaginertia="5.2869 5.2236 5.9868" mass="0.8" pos="0 0 0"></inertial>
+			<site name="site:object53" pos="0 0 0" size="0.0125 0.0125 0.0125" rgba="1 0 0 1" type="sphere"></site>
+		</body>
+		<body name="object54" pos="-1.15 0.400 2.025">
+			<joint name="object54:joint" type="free" damping="0.01"></joint>
+			<geom size="0.0145 0.0145 0.0145" type="box" condim="3" name="object54" material="red_block_mat" mass="0.8" ></geom>
+            <inertial diaginertia="5.2869 5.2236 5.9868" mass="0.8" pos="0 0 0"></inertial>
+			<site name="site:object54" pos="0 0 0" size="0.0125 0.0125 0.0125" rgba="1 0 0 1" type="sphere"></site>
+		</body>
+		<body name="object55" pos="-1.15 0.450 2.025">
+			<joint name="object55:joint" type="free" damping="0.01"></joint>
+			<geom size="0.0145 0.0145 0.0145" type="box" condim="3" name="object55" material="red_block_mat" mass="0.8" ></geom>
+            <inertial diaginertia="5.2869 5.2236 5.9868" mass="0.8" pos="0 0 0"></inertial>
+			<site name="site:object55" pos="0 0 0" size="0.0125 0.0125 0.0125" rgba="1 0 0 1" type="sphere"></site>
+		</body>
+		<body name="object56" pos="-1.15 0.500 2.025">
+			<joint name="object56:joint" type="free" damping="0.01"></joint>
+			<geom size="0.0145 0.0145 0.0145" type="box" condim="3" name="object56" material="red_block_mat" mass="0.8" ></geom>
+            <inertial diaginertia="5.2869 5.2236 5.9868" mass="0.8" pos="0 0 0"></inertial>
+			<site name="site:object56" pos="0 0 0" size="0.0125 0.0125 0.0125" rgba="1 0 0 1" type="sphere"></site>
+		</body>
+		<body name="object57" pos="-1.15 0.550 2.025">
+			<joint name="object57:joint" type="free" damping="0.01"></joint>
+			<geom size="0.0145 0.0145 0.0145" type="box" condim="3" name="object57" material="red_block_mat" mass="0.8" ></geom>
+            <inertial diaginertia="5.2869 5.2236 5.9868" mass="0.8" pos="0 0 0"></inertial>
+			<site name="site:object57" pos="0 0 0" size="0.0125 0.0125 0.0125" rgba="1 0 0 1" type="sphere"></site>
+		</body>
+		<body name="object58" pos="-1.15 0.600 2.025">
+			<joint name="object58:joint" type="free" damping="0.01"></joint>
+			<geom size="0.0145 0.0145 0.0145" type="box" condim="3" name="object58" material="red_block_mat" mass="0.8" ></geom>
+            <inertial diaginertia="5.2869 5.2236 5.9868" mass="0.8" pos="0 0 0"></inertial>
+			<site name="site:object58" pos="0 0 0" size="0.0125 0.0125 0.0125" rgba="1 0 0 1" type="sphere"></site>
+		</body>
+		<body name="object59" pos="-1.15 0.650 2.025">
+			<joint name="object59:joint" type="free" damping="0.01"></joint>
+			<geom size="0.0145 0.0145 0.0145" type="box" condim="3" name="object59" material="red_block_mat" mass="0.8" ></geom>
+            <inertial diaginertia="5.2869 5.2236 5.9868" mass="0.8" pos="0 0 0"></inertial>
+			<site name="site:object59" pos="0 0 0" size="0.0125 0.0125 0.0125" rgba="1 0 0 1" type="sphere"></site>
+		</body>
+		<body name="object60" pos="-1.15 .700 2.025">
+			<joint name="object60:joint" type="free" damping="0.01"></joint>
+			<geom size="0.0145 0.0145 0.0145" type="box" condim="3" name="object60" material="red_block_mat" mass="0.8" ></geom>
+            <inertial diaginertia="5.2869 5.2236 5.9868" mass="0.8" pos="0 0 0"></inertial>
+			<site name="site:object60" pos="0 0 0" size="0.0125 0.0125 0.0125" rgba="1 0 0 1" type="sphere"></site>
+		</body>
+        <body name="object61" pos="-1.025 0.950 2.025">
+			<joint name="object61:joint" type="free" damping="0.01"></joint>
+			<geom size="0.0145 0.0145 0.0145" type="box" condim="3" name="object61" material="magenta_block_mat" mass="0.8" ></geom>
+            <inertial diaginertia="5.2869 5.2236 5.9868" mass="0.8" pos="0 0 0"></inertial>
+			<site name="site:object61" pos="0 0 0" size="0.0125 0.0125 0.0125" rgba="1 0 0 1" type="sphere"></site>
+		</body>
+		<body name="object62" pos="-1.025 1.000 2.025">
+			<joint name="object62:joint" type="free" damping="0.01"></joint>
+			<geom size="0.0145 0.0145 0.0145" type="box" condim="3" name="object62" material="magenta_block_mat" mass="0.8" ></geom>
+            <inertial diaginertia="5.2869 5.2236 5.9868" mass="0.8" pos="0 0 0"></inertial>
+			<site name="site:object62" pos="0 0 0" size="0.0125 0.0125 0.0125" rgba="1 0 0 1" type="sphere"></site>
+		</body>
+		<body name="object63" pos="-1.025 1.050 2.025">
+			<joint name="object63:joint" type="free" damping="0.01"></joint>
+			<geom size="0.0145 0.0145 0.0145" type="box" condim="3" name="object63" material="magenta_block_mat" mass="0.8" ></geom>
+            <inertial diaginertia="5.2869 5.2236 5.9868" mass="0.8" pos="0 0 0"></inertial>
+			<site name="site:object63" pos="0 0 0" size="0.0125 0.0125 0.0125" rgba="1 0 0 1" type="sphere"></site>
+		</body>
+		<body name="object64" pos="-1.025 1.100 2.025">
+			<joint name="object64:joint" type="free" damping="0.01"></joint>
+			<geom size="0.0145 0.0145 0.0145" type="box" condim="3" name="object64" material="magenta_block_mat" mass="0.8" ></geom>
+            <inertial diaginertia="5.2869 5.2236 5.9868" mass="0.8" pos="0 0 0"></inertial>
+			<site name="site:object64" pos="0 0 0" size="0.0125 0.0125 0.0125" rgba="1 0 0 1" type="sphere"></site>
+		</body>
+		<body name="object65" pos="-1.025 1.150 2.025">
+			<joint name="object65:joint" type="free" damping="0.01"></joint>
+			<geom size="0.0145 0.0145 0.0145" type="box" condim="3" name="object65" material="magenta_block_mat" mass="0.8" ></geom>
+            <inertial diaginertia="5.2869 5.2236 5.9868" mass="0.8" pos="0 0 0"></inertial>
+			<site name="site:object65" pos="0 0 0" size="0.0125 0.0125 0.0125" rgba="1 0 0 1" type="sphere"></site>
+		</body>
+		<body name="object66" pos="-1.025 1.200 2.025">
+			<joint name="object66:joint" type="free" damping="0.01"></joint>
+			<geom size="0.0145 0.0145 0.0145" type="box" condim="3" name="object66" material="magenta_block_mat" mass="0.8" ></geom>
+            <inertial diaginertia="5.2869 5.2236 5.9868" mass="0.8" pos="0 0 0"></inertial>
+			<site name="site:object66" pos="0 0 0" size="0.0125 0.0125 0.0125" rgba="1 0 0 1" type="sphere"></site>
+		</body>
+		<body name="object67" pos="-1.025 1.250 2.025">
+			<joint name="object67:joint" type="free" damping="0.01"></joint>
+			<geom size="0.0145 0.0145 0.0145" type="box" condim="3" name="object67" material="magenta_block_mat" mass="0.8" ></geom>
+            <inertial diaginertia="5.2869 5.2236 5.9868" mass="0.8" pos="0 0 0"></inertial>
+			<site name="site:object67" pos="0 0 0" size="0.0125 0.0125 0.0125" rgba="1 0 0 1" type="sphere"></site>
+		</body>
+		<body name="object68" pos="-1.025 1.300 2.025">
+			<joint name="object68:joint" type="free" damping="0.01"></joint>
+			<geom size="0.0145 0.0145 0.0145" type="box" condim="3" name="object68" material="magenta_block_mat" mass="0.8" ></geom>
+            <inertial diaginertia="5.2869 5.2236 5.9868" mass="0.8" pos="0 0 0"></inertial>
+			<site name="site:object68" pos="0 0 0" size="0.0125 0.0125 0.0125" rgba="1 0 0 1" type="sphere"></site>
+		</body>
+		<body name="object69" pos="-1.025 1.350 2.025">
+			<joint name="object69:joint" type="free" damping="0.01"></joint>
+			<geom size="0.0145 0.0145 0.0145" type="box" condim="3" name="object69" material="magenta_block_mat" mass="0.8" ></geom>
+            <inertial diaginertia="5.2869 5.2236 5.9868" mass="0.8" pos="0 0 0"></inertial>
+			<site name="site:object69" pos="0 0 0" size="0.0125 0.0125 0.0125" rgba="1 0 0 1" type="sphere"></site>
+		</body>
+		<body name="object70" pos="-1.025 1.400 2.025">
+			<joint name="object70:joint" type="free" damping="0.01"></joint>
+			<geom size="0.0145 0.0145 0.0145" type="box" condim="3" name="object70" material="magenta_block_mat" mass="0.8" ></geom>
+            <inertial diaginertia="5.2869 5.2236 5.9868" mass="0.8" pos="0 0 0"></inertial>
+			<site name="site:object70" pos="0 0 0" size="0.0125 0.0125 0.0125" rgba="1 0 0 1" type="sphere"></site>
+		</body>
+        <body name="object71" pos="-1.15 0.950 2.025">
+			<joint name="object71:joint" type="free" damping="0.01"></joint>
+			<geom size="0.0145 0.0145 0.0145" type="box" condim="3" name="object71" material="pink_block_mat" mass="0.8" ></geom>
+            <inertial diaginertia="5.2869 5.2236 5.9868" mass="0.8" pos="0 0 0"></inertial>
+			<site name="site:object71" pos="0 0 0" size="0.0125 0.0125 0.0125" rgba="1 0 0 1" type="sphere"></site>
+		</body>
+		<body name="object72" pos="-1.15 1.000 2.025">
+			<joint name="object72:joint" type="free" damping="0.01"></joint>
+			<geom size="0.0145 0.0145 0.0145" type="box" condim="3" name="object72" material="pink_block_mat" mass="0.8" ></geom>
+            <inertial diaginertia="5.2869 5.2236 5.9868" mass="0.8" pos="0 0 0"></inertial>
+			<site name="site:object72" pos="0 0 0" size="0.0125 0.0125 0.0125" rgba="1 0 0 1" type="sphere"></site>
+		</body>
+		<body name="object73" pos="-1.15 1.050 2.025">
+			<joint name="object73:joint" type="free" damping="0.01"></joint>
+			<geom size="0.0145 0.0145 0.0145" type="box" condim="3" name="object73" material="pink_block_mat" mass="0.8" ></geom>
+            <inertial diaginertia="5.2869 5.2236 5.9868" mass="0.8" pos="0 0 0"></inertial>
+			<site name="site:object73" pos="0 0 0" size="0.0125 0.0125 0.0125" rgba="1 0 0 1" type="sphere"></site>
+		</body>
+		<body name="object74" pos="-1.15 1.100 2.025">
+			<joint name="object74:joint" type="free" damping="0.01"></joint>
+			<geom size="0.0145 0.0145 0.0145" type="box" condim="3" name="object74" material="pink_block_mat" mass="0.8" ></geom>
+            <inertial diaginertia="5.2869 5.2236 5.9868" mass="0.8" pos="0 0 0"></inertial>
+			<site name="site:object74" pos="0 0 0" size="0.0125 0.0125 0.0125" rgba="1 0 0 1" type="sphere"></site>
+		</body>
+		<body name="object75" pos="-1.15 1.150 2.025">
+			<joint name="object75:joint" type="free" damping="0.01"></joint>
+			<geom size="0.0145 0.0145 0.0145" type="box" condim="3" name="object75" material="pink_block_mat" mass="0.8" ></geom>
+            <inertial diaginertia="5.2869 5.2236 5.9868" mass="0.8" pos="0 0 0"></inertial>
+			<site name="site:object75" pos="0 0 0" size="0.0125 0.0125 0.0125" rgba="1 0 0 1" type="sphere"></site>
+		</body>
+		<body name="object76" pos="-1.15 1.200 2.025">
+			<joint name="object76:joint" type="free" damping="0.01"></joint>
+			<geom size="0.0145 0.0145 0.0145" type="box" condim="3" name="object76" material="pink_block_mat" mass="0.8" ></geom>
+            <inertial diaginertia="5.2869 5.2236 5.9868" mass="0.8" pos="0 0 0"></inertial>
+			<site name="site:object76" pos="0 0 0" size="0.0125 0.0125 0.0125" rgba="1 0 0 1" type="sphere"></site>
+		</body>
+		<body name="object77" pos="-1.15 1.250 2.025">
+			<joint name="object77:joint" type="free" damping="0.01"></joint>
+			<geom size="0.0145 0.0145 0.0145" type="box" condim="3" name="object77" material="pink_block_mat" mass="0.8" ></geom>
+            <inertial diaginertia="5.2869 5.2236 5.9868" mass="0.8" pos="0 0 0"></inertial>
+			<site name="site:object77" pos="0 0 0" size="0.0125 0.0125 0.0125" rgba="1 0 0 1" type="sphere"></site>
+		</body>
+		<body name="object78" pos="-1.15 1.300 2.025">
+			<joint name="object78:joint" type="free" damping="0.01"></joint>
+			<geom size="0.0145 0.0145 0.0145" type="box" condim="3" name="object78" material="pink_block_mat" mass="0.8" ></geom>
+            <inertial diaginertia="5.2869 5.2236 5.9868" mass="0.8" pos="0 0 0"></inertial>
+			<site name="site:object78" pos="0 0 0" size="0.0125 0.0125 0.0125" rgba="1 0 0 1" type="sphere"></site>
+		</body>
+		<body name="object79" pos="-1.15 1.350 2.025">
+			<joint name="object79:joint" type="free" damping="0.01"></joint>
+			<geom size="0.0145 0.0145 0.0145" type="box" condim="3" name="object79" material="pink_block_mat" mass="0.8" ></geom>
+            <inertial diaginertia="5.2869 5.2236 5.9868" mass="0.8" pos="0 0 0"></inertial>
+			<site name="site:object79" pos="0 0 0" size="0.0125 0.0125 0.0125" rgba="1 0 0 1" type="sphere"></site>
+		</body>
+		<body name="object80" pos="-1.15 1.400 2.025">
+			<joint name="object80:joint" type="free" damping="0.01"></joint>
+			<geom size="0.0145 0.0145 0.0145" type="box" condim="3" name="object80" material="pink_block_mat" mass="0.8" ></geom>
+            <inertial diaginertia="5.2869 5.2236 5.9868" mass="0.8" pos="0 0 0"></inertial>
+			<site name="site:object80" pos="0 0 0" size="0.0125 0.0125 0.0125" rgba="1 0 0 1" type="sphere"></site>
+		</body>
+
+
+</mujoco>        
