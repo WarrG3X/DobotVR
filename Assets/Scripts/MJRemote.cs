@@ -7,6 +7,7 @@
 using System;
 using System.IO;
 using System.Net.Sockets;
+using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
@@ -30,7 +31,8 @@ public class MJRemote : MonoBehaviour
         SetCamera       = 5,    // receive: camera index (4 bytes)
         SetQpos         = 6,    // receive: qpos (4*nqpos bytes)
         SetMocap        = 7,    // receive: mocap_pos, mocap_quat (28*nmocap bytes)
-        GetOVRInput     = 8     // send: Oculus Controller Data (32 Bytes)
+        GetOVRInput     = 8,     // send: Oculus Controller Data (32 Bytes)
+        SetTarget       = 9     // recieve : target pos
     }
 
 
@@ -102,6 +104,8 @@ public class MJRemote : MonoBehaviour
     public UnityEngine.Transform camera_pos;
     public UnityEngine.Transform mocap_pos;
     public UnityEngine.Transform controller_tracker;
+    public UnityEngine.Transform target_pos;
+
     Vector3 camera_init_pos;
     int steps = 0;
     public Text counter;
@@ -514,7 +518,7 @@ public class MJRemote : MonoBehaviour
         controllerpos = new Vector3(-10 * posbuf[0], 10 * posbuf[2], -10 * posbuf[1]);
         controller_tracker.position = controllerpos;
 
-        Debug.Log(mocap_pos.position - controllerpos);
+        //Debug.Log(mocap_pos.position - controllerpos);
 
         float delta_x = -1*Mathf.Sign(controllerpos.x - mocap_pos.position.x )* Mathf.Min(Mathf.Abs(controllerpos.x - mocap_pos.position.x), 2.0f)/2.0f;
         float delta_y = -1*Mathf.Sign(controllerpos.z - mocap_pos.position.z) * Mathf.Min(Mathf.Abs(controllerpos.z - mocap_pos.position.z), 1.25f) / 1.25f;
@@ -524,10 +528,7 @@ public class MJRemote : MonoBehaviour
         posbuf[1] = delta_y;
         posbuf[2] = delta_z;
 
-        Debug.Log(delta_x);
-
-        if (steps == 300)
-            steps = 0;
+        //Debug.Log(delta_x);
         counter.text = steps.ToString();
 
 
@@ -651,6 +652,18 @@ public class MJRemote : MonoBehaviour
                     stream.Write(BitConverter.GetBytes(quatbuf[2]), 0, 4);
                     stream.Write(BitConverter.GetBytes(quatbuf[3]), 0, 4);
                     break;
+
+                // SetTarget: receive target pos
+                case Command.SetTarget:
+                    ReadAll(12);
+                    steps = 0;
+                    float x = System.BitConverter.ToSingle(buffer.Take(4).ToArray(), 0);
+                    float y = System.BitConverter.ToSingle(buffer.Skip(4).Take(4).ToArray(), 0);
+                    float z = System.BitConverter.ToSingle(buffer.Skip(8).Take(4).ToArray(), 0);
+                    target_pos.position = new Vector3(-10 * x, 10 * z, -10 * y);
+                    Debug.Log(new Vector3(x, y,z));
+                    break;
+
             }
         }
     }
