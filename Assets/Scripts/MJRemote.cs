@@ -31,8 +31,10 @@ public class MJRemote : MonoBehaviour
         SetCamera       = 5,    // receive: camera index (4 bytes)
         SetQpos         = 6,    // receive: qpos (4*nqpos bytes)
         SetMocap        = 7,    // receive: mocap_pos, mocap_quat (28*nmocap bytes)
-        GetOVRInput     = 8,     // send: Oculus Controller Data (32 Bytes)
-        SetTarget       = 9     // recieve : target pos
+        GetOVRInput     = 8,    // send: Oculus Controller Data (32 Bytes)
+        SetTarget       = 9,    // recieve : target pos
+        SetTargetStatus = 10,   // recieve : target status
+        GetSaveStatus   = 11    // send : send save status
     }
 
 
@@ -109,6 +111,16 @@ public class MJRemote : MonoBehaviour
     Vector3 camera_init_pos;
     int steps = 0;
     public Text counter;
+    public GameObject prompt;
+    public Text title;
+    public Text subtitle;
+
+
+    public Material normalmat;
+    public Material glowmat;
+    public GameObject target_obj;
+
+    bool prompt_mode = false;
 
 
     // convert transform from plugin to GameObject
@@ -491,45 +503,83 @@ public class MJRemote : MonoBehaviour
             {
                 client = null;
                 stream = null;
+                counter.enabled = false;
+                title.enabled = true;
+                subtitle.enabled = true;
+                prompt.SetActive(false);
+            }
+            else
+            {
+                if(!prompt_mode)
+                    counter.enabled = true;
+                title.enabled = false;
+                subtitle.enabled = false;
             }
 
             lastcheck = Time.time; 
         }
 
         OVRInput.Update();
-        Vector3 controllerpos = OVRInput.GetLocalControllerPosition(OVRInput.Controller.RTouch);
-        Quaternion controllerquat = OVRInput.GetLocalControllerRotation(OVRInput.Controller.RTouch);
-        posbuf[0] = Mathf.Clamp(0.8f + -1*controllerpos.x * 1.5f, 0.4f, 1.2f);
-        posbuf[1] = Mathf.Clamp(1f + -1*controllerpos.z * 1.5f, 0.4f, 0.9f);
-        posbuf[2] = Mathf.Clamp(3.2f + controllerpos.y * 4f, 0.0f, 0.8f);
-        quatbuf[0] = controllerquat.x;
-        quatbuf[1] = controllerquat.y;
-        quatbuf[2] = controllerquat.z;
-        quatbuf[3] = controllerquat.w;
-        grip = 1f-2f*OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger, OVRInput.Controller.RTouch);
 
-        Vector2 lstick = OVRInput.Get(OVRInput.Axis2D.PrimaryThumbstick, OVRInput.Controller.LTouch);
-        camera_pos.position = new Vector3(camera_pos.position.x + 0.03f*lstick.x, camera_pos.position.y, camera_pos.position.z + 0.03f * lstick.y);
-        if (OVRInput.Get(OVRInput.Button.PrimaryThumbstick, OVRInput.Controller.LTouch))
-            camera_pos.position = camera_init_pos;
+        if (!prompt_mode)
+        {
+            Vector3 controllerpos = OVRInput.GetLocalControllerPosition(OVRInput.Controller.RTouch);
+            Quaternion controllerquat = OVRInput.GetLocalControllerRotation(OVRInput.Controller.RTouch);
+            posbuf[0] = Mathf.Clamp(0.8f + -1 * controllerpos.x * 1.5f, 0.4f, 1.2f);
+            posbuf[1] = Mathf.Clamp(1f + -1 * controllerpos.z * 1.5f, 0.4f, 0.9f);
+            posbuf[2] = Mathf.Clamp(3.2f + controllerpos.y * 4f, 0.0f, 0.8f);
+            quatbuf[0] = controllerquat.x;
+            quatbuf[1] = controllerquat.y;
+            quatbuf[2] = controllerquat.z;
+            quatbuf[3] = controllerquat.w;
+            grip = 1f - 2f * OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger, OVRInput.Controller.RTouch);
 
-        //controllerpos = new Vector3(posbuf[0], posbuf[1], posbuf[2]);
-        //controllerpos = new Vector3(-10*0.8f, 10 * 0.4f,-10 *0.65f);
-        controllerpos = new Vector3(-10 * posbuf[0], 10 * posbuf[2], -10 * posbuf[1]);
-        controller_tracker.position = controllerpos;
+            Vector2 lstick = OVRInput.Get(OVRInput.Axis2D.PrimaryThumbstick, OVRInput.Controller.LTouch);
+            camera_pos.position = new Vector3(camera_pos.position.x + 0.03f * lstick.x, camera_pos.position.y, camera_pos.position.z + 0.03f * lstick.y);
+            if (OVRInput.Get(OVRInput.Button.PrimaryThumbstick, OVRInput.Controller.LTouch))
+                camera_pos.position = camera_init_pos;
 
-        //Debug.Log(mocap_pos.position - controllerpos);
+            //controllerpos = new Vector3(posbuf[0], posbuf[1], posbuf[2]);
+            //controllerpos = new Vector3(-10*0.8f, 10 * 0.4f,-10 *0.65f);
+            controllerpos = new Vector3(-10 * posbuf[0], 10 * posbuf[2], -10 * posbuf[1]);
+            controller_tracker.position = controllerpos;
 
-        float delta_x = -1*Mathf.Sign(controllerpos.x - mocap_pos.position.x )* Mathf.Min(Mathf.Abs(controllerpos.x - mocap_pos.position.x), 2.0f)/2.0f;
-        float delta_y = -1*Mathf.Sign(controllerpos.z - mocap_pos.position.z) * Mathf.Min(Mathf.Abs(controllerpos.z - mocap_pos.position.z), 1.25f) / 1.25f;
-        float delta_z = Mathf.Sign(controllerpos.y - mocap_pos.position.y) * Mathf.Min(Mathf.Abs(controllerpos.y - mocap_pos.position.y), 2.0f) / 2.0f;
+            //Debug.Log(mocap_pos.position - controllerpos);
 
-        posbuf[0] = delta_x;
-        posbuf[1] = delta_y;
-        posbuf[2] = delta_z;
+            float delta_x = -1 * Mathf.Sign(controllerpos.x - mocap_pos.position.x) * Mathf.Min(Mathf.Abs(controllerpos.x - mocap_pos.position.x), 2.0f) / 2.0f;
+            float delta_y = -1 * Mathf.Sign(controllerpos.z - mocap_pos.position.z) * Mathf.Min(Mathf.Abs(controllerpos.z - mocap_pos.position.z), 1.25f) / 1.25f;
+            float delta_z = Mathf.Sign(controllerpos.y - mocap_pos.position.y) * Mathf.Min(Mathf.Abs(controllerpos.y - mocap_pos.position.y), 2.0f) / 2.0f;
 
-        //Debug.Log(delta_x);
-        counter.text = steps.ToString();
+            posbuf[0] = delta_x;
+            posbuf[1] = delta_y;
+            posbuf[2] = delta_z;
+
+            //Debug.Log(delta_x);
+            counter.text = steps.ToString();
+
+        }
+        else
+        {
+            if (OVRInput.Get(OVRInput.Button.One, OVRInput.Controller.RTouch))
+            {
+                stream.Write(BitConverter.GetBytes(1), 0, 4);
+                prompt_mode = false;
+                counter.enabled = true;
+                prompt.SetActive(false);
+            }
+            else if (OVRInput.Get(OVRInput.Button.Two, OVRInput.Controller.RTouch))
+            {
+                stream.Write(BitConverter.GetBytes(0), 0, 4);
+                prompt_mode = false;
+                counter.enabled = true;
+                prompt.SetActive(false);
+            }
+            else if (OVRInput.Get(OVRInput.Button.One, OVRInput.Controller.LTouch))
+            {
+                stream.Write(BitConverter.GetBytes(-1), 0, 4);
+                Application.Quit();
+            }
+        }
 
 
 
@@ -661,7 +711,25 @@ public class MJRemote : MonoBehaviour
                     float y = System.BitConverter.ToSingle(buffer.Skip(4).Take(4).ToArray(), 0);
                     float z = System.BitConverter.ToSingle(buffer.Skip(8).Take(4).ToArray(), 0);
                     target_pos.position = new Vector3(-10 * x, 10 * z, -10 * y);
-                    Debug.Log(new Vector3(x, y,z));
+                    break;
+                
+                // SetTargetStatus: change target material based on distance
+                case Command.SetTargetStatus:
+                    ReadAll(4);
+                    float value = BitConverter.ToInt32(buffer, 0);
+                    if (value < 0)
+                        target_obj.GetComponent<MeshRenderer>().material = normalmat;
+                    else
+                        target_obj.GetComponent<MeshRenderer>().material = glowmat;
+                    break;
+
+                // GetSaveStatus: send whether to save demo or not
+                case Command.GetSaveStatus:
+                    prompt_mode = true;
+                    counter.enabled = false;
+                    title.enabled = false;
+                    subtitle.enabled = false;
+                    prompt.SetActive(true);
                     break;
 
             }
