@@ -18,7 +18,7 @@ The main use-case is to collect human demonstrations with the Oculus which can b
 
 ## Usage Workflow
 General sequence for usage - 
- 1. Start the Unity App from the Unity Editor or from the built executable. The default address is `127.0.0.1:1050`. This can be changed by selecting the 'MuJoCo' object in the Unity Editor and changing the IP/Port in the Inspector.
+ 1. Start the Unity App from the Unity Editor or from the built executable. The default address is `127.0.0.1:1050`. This can be changed by selecting the `MuJoCo` object in the Unity Editor and changing the IP/Port in the Inspector.
  
  2. Start gym-dobot by `python -m gym_dobot.run_env --unity_remote=1`. If you changed the default IP/Port in Unity, make the corresponding changes in `gym-dobot/gym_dobot/envs/mjremote.py` in the `connect()` function. You can run the Unity App and Mujoco Simulation on different systems but this can cause severe latency so running both on localhost is recommended. **NOTE -** Currently the app only supports the `DobotClutterPickAndPlaceEnv`. Other environments won't work.
  
