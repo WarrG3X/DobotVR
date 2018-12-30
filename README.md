@@ -33,3 +33,10 @@ General sequence for usage -
 7. All demos are saved in the `gym-dobot/gym_dobot/envs/Demos` folder. Each demo is saved as a separate file with a timestamp which contains the action, observation, info value for each step in an episode.
 
 8. After all demos have been taken, they need to be merged into a single file. This can be done using the `demo_merge.py` script in the `envs` folder. This script will parse all `.npz` files in the `Demos` folder and save a merged timestamped `.npz` file in the `Demos/Merged/` folder.
+
+
+
+## Notes
+ - In case you need to edit the Unity Env, main logic is in `MJRemote.cs`. This script was originally provided as a part of the Mujoco Unity Plugin but was modified for Oculus support. You can compare it with `MJRemoteOriginal.cs` script in the `Misc` directory to understand the modifications.
+ - Don’t save a demo the very first time the simulation runs as there is usually a brief stutter when it connects for the first time.
+
